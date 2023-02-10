@@ -1,0 +1,286 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* A seguir algumas variaveis de cor para serem usadas no css*/
+:root{
+  --orange:#ed4d1b;
+  --yellow:#ff9a3c;
+  --black:#000;
+  --white:#fff;
+}
+
+body{
+  background: linear-gradient(90deg, #ffe7d1 0%, #fff2e6 100%);
+  padding: 0 1rem;
+}
+
+/*A seguir é feita a estilização das bordas no header em todas as sessões e footer*/
+header,
+.hero-section,
+.courses-section,
+footer {
+  border-color: var(--black);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  padding: 1.5rem;
+}
+
+/*Estilização da img do header*/
+header img {
+  display:block;
+  margin: 1rem auto;
+}
+
+/*Alinhamento da nav com grid*/
+header nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*Estilização das tags <a> */
+nav a {
+  color: var(--black);
+  font-size : 1.25rem;
+  padding: .5rem;
+  text-decoration: none;
+} 
+
+/*Alinhamento das tags <a> dentro do header*/
+header nav a:nth-child(2n-1) {
+  text-align:right;
+}
+
+/*Estilização dos botoes*/
+.button {
+  background-color: var(--orange);
+  border: 2px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  color: var(--black);
+  display: block;
+  font-size: 1.25rem;
+  padding: .75rem 1rem;
+  max-width: 14rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/*A seguir estilização da section hero-section*/
+.hero-section {
+  padding-right: 0;
+  padding-bottom: 16rem;
+}
+
+/*A seguir a estilização da imagem dentro da section hero-section*/
+.hero-section img {
+  display: block;
+  margin: 1.25rem 0 0 auto;
+  max-width: 100%;
+}
+
+/*Estilização das tags h1 e h2*/
+h1 {
+  font-size: 2rem;
+  line-height: 105%;
+}
+h2 {
+  font-size: 2rem;
+}
+
+/*Estilização do paragrafo dentro da section hero-section*/
+.hero-section p {
+  font-size: 1.25rem;
+  padding-right: 1rem;
+}
+
+/*A seguir estilização da section courses-section*/
+.courses-section {
+  padding-bottom: 8rem;
+} 
+
+/*Posicionando os cards*/
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.25rem;
+  margin-top: -8rem;
+  margin-bottom: 4rem;
+}
+
+/*Estilização dos card, uma a um*/
+.card {
+  background-color: var(--orange);
+  border: 2px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  max-width: 17rem;
+  padding: 2rem 0 0 2rem;
+}
+
+/*Selecionando os cards PAR com o :nth-child(2n), para dar a estilização diferente */
+.card:nth-child(2n) {
+  align-self: end;
+  background-color: var(--yellow);
+}
+
+/*Estilização do titulo e a seta dentro do card*/
+.card strong {
+  display: block;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+} 
+.card a {
+  display: block;
+  margin: 3rem 0 0 auto;
+  width: fit-content;
+}
+
+/*ESTILIZAÇÃO DO FOOTER*/
+
+footer{
+  border-bottom: 0;
+  padding: 1rem 1.25rem 5rem 1.25rem;
+}
+footer div {
+  text-align: center;
+}
+footer nav a{
+  display: block;
+  padding-left: 0;
+}
+.form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.25rem;
+}
+.input-form {
+  padding: 10px;
+  box-shadow: 4px 4px 0 var(--black);
+  width: 100%;
+}
+
+
+/*A seguir algumas classes definidas para serem usadas no Html, marging, cor e alinhamento */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-primary {
+  color: var(--orange);
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/*RESPONSIVIDADE*/
+/*646px*/
+@media screen and (min-width: 40rem) {
+  header nav {
+    display: block;
+    text-align: center;
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cards :nth-child(2n){
+    margin-top: 1rem;
+  }
+  .hero-section img {
+    margin: 1.25rem auto 0 auto;
+    max-width: 100%;
+
+  }
+  .hero-section div a {
+    margin: 2rem auto ;
+  }
+}
+/*Responsividade min 864 px*/
+@media screen and (min-width: 54rem) {
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+     .hero-section img {
+      max-width: 60%; 
+      height: 100%;
+  
+    } 
+    .hero-section{
+      display: flex;
+      flex-direction: row-reverse;
+      
+    }
+    .hero-section div {
+      margin-top: 3rem;
+    } 
+
+    footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0 40px; 
+      align-items: center;
+    }
+    footer div {
+      margin-top: 2rem;
+    }
+    footer nav a {
+      line-height: 2.5rem;
+    }
+    .form {
+      width: 300px; ;
+    }
+}
+
+/*Responsividade a partir de 937px */
+@media screen and (min-width: 58.56rem) {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+  }
+  .form {
+    width: 400px; ;
+  }
+}
+
+/* maximo 325px. necessario para alinhar os cards que estavam muito grandes neste tamanho de tela */
+@media (max-width:325px){
+  .card{
+    width: 210px;
+    height: 370px;
+  }
+  .hero-section div .button {
+    margin-right: 1rem;
+  }
+}
